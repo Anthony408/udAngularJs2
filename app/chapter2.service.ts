@@ -4,11 +4,11 @@
  * Mocks the data
  */
 
-export class CourseService{
+export class Chapter2Service{
     getSource(): string[] {
         /*
          * mock service, return a list of strings for the view.
          */
-        return ['course1', 'course2', 'course ...', 'courseN', ]
+        return ['course1', 'course2', 'course ...', 'courseN', 'foo', 'blah', 'ok' ]
     }
 }

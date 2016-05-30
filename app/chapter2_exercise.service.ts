@@ -5,7 +5,7 @@
  * returns the list of Authors when authorService.getAuthors()
  * is invoked.
  */
-export class AuthorsService{
+export class Chapter2ExerciseService{
     getAuthors(): string[] {
         return ['Author1', 'Author2', 'Author3'];
     }

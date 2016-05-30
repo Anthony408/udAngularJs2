@@ -1,4 +1,4 @@
-System.register(['@angular/core', './courses.component', './authors.component'], function(exports_1, context_1) {
+System.register(['@angular/core', './chapter2.component', './chapter2_exercise.component', './chapter3.component', "./chapter3_exercise.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,46 +10,35 @@ System.register(['@angular/core', './courses.component', './authors.component'],
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1;
-    var AppComponent;
+    var core_1, chapter2_component_1, chapter2_exercise_component_1, chapter3_component_1, chapter3_exercise_component_1;
+    var template, AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (courses_component_1_1) {
-                courses_component_1 = courses_component_1_1;
+            function (chapter2_component_1_1) {
+                chapter2_component_1 = chapter2_component_1_1;
             },
-            function (authors_component_1_1) {
-                authors_component_1 = authors_component_1_1;
+            function (chapter2_exercise_component_1_1) {
+                chapter2_exercise_component_1 = chapter2_exercise_component_1_1;
+            },
+            function (chapter3_component_1_1) {
+                chapter3_component_1 = chapter3_component_1_1;
+            },
+            function (chapter3_exercise_component_1_1) {
+                chapter3_exercise_component_1 = chapter3_exercise_component_1_1;
             }],
         execute: function() {
-            // import {ButtonsDemoComponent} from "./button.component";
+            template = "\n<h1>Udacity Angular 2 App</h1>\n\n<!-- illustrates all of chapter2, how to use a component, service, template.-->\n<chapter2></chapter2> \n\n<!-- illustrates all of chapter2, how to use a component, service, template.-->\n<chapter2_exercise></chapter2_exercise> \n\n<!-- added for binding examples.  class, property, and data -->\n<chapter3></chapter3>     \n\n<!-- added for exercise -->\n<chapter3_exercise></chapter3_exercise> \n\n";
             AppComponent = (function () {
                 function AppComponent() {
-                    this.isBlue = true;
-                    this.someValue = "foo";
                 }
-                /*
-                 * Section 3, lesson 24 -- event binding.
-                 *
-                 * example of event binding, see the button object.
-                 *
-                 * The following binds teh click event from the button to this method:
-                 *
-                 *                      (click)="onClick($event)"
-                 *
-                 * Also note, $event is passed from the UI ot back end so the event can be inspected.
-                 * This is standard jquery, not angular, angular just allows this by passing '$event'
-                 */
-                AppComponent.prototype.onClick = function ($event) {
-                    console.log('button was clicked!', event);
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n<h1>My First Angular 2 App</h1>\n<courses></courses> <!-- added from lessons -->\n<authors></authors> <!-- added for exercise --> \n<!-- Section 3, lesson 23 -- class binding. (style.backgroundColor ...) below -->\n<button \n    class=\"btn btn-primary\"\n    [style.backgroundColor]=\"isBlue ? 'blue' : 'gray' \" \n    (click)=\"onClick($event)\">blue or gray\n</button>\n<br>\n<br>\n    <input type=\"text\" [(ngModel)]=\"someValue\" /> <!-- two way binding example, when typing, the preview gets updated -->\n    <input type=\"button\" (click)=\"someValue = ''\" value=\"Clear\"/> <!-- two way binding example (clear the data, also form) -->\n    Preview {{ someValue }}\n<br>    \n<!-- <buttons-demo></buttons-demo> --> <!-- added for attempting to get bootstrap to work, not yet -->\n",
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent,]
+                        template: template,
+                        directives: [chapter2_component_1.Chapter2Component, chapter2_exercise_component_1.Chapter2ExerciseComponent, chapter3_component_1.Chapter3Component, chapter3_exercise_component_1.Chapter3ExerciseComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
