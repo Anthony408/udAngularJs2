@@ -18,7 +18,14 @@ import {AuthorsComponent} from './authors.component'
 <button 
     class="btn btn-primary"
     [style.backgroundColor]="isBlue ? 'blue' : 'gray' " 
-    (click)="onClick($event)">blue or gray</button>    
+    (click)="onClick($event)">blue or gray
+</button>
+<br>
+<br>
+    <input type="text" [(ngModel)]="someValue" /> <!-- two way binding example, when typing, the preview gets updated -->
+    <input type="button" (click)="someValue = ''" value="Clear"/> <!-- two way binding example (clear the data, also form) -->
+    Preview {{ someValue }}
+<br>    
 <!-- <buttons-demo></buttons-demo> --> <!-- added for attempting to get bootstrap to work, not yet -->
 `,
     directives: [CoursesComponent, AuthorsComponent, /**ButtonsDemoComponent**/]
@@ -26,6 +33,7 @@ import {AuthorsComponent} from './authors.component'
 
 export class AppComponent {
     isBlue=true;
+    someValue: string = "foo";
 
     /*
      * Section 3, lesson 24 -- event binding.

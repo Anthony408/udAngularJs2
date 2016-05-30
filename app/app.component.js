@@ -28,6 +28,7 @@ System.register(['@angular/core', './courses.component', './authors.component'],
             AppComponent = (function () {
                 function AppComponent() {
                     this.isBlue = true;
+                    this.someValue = "foo";
                 }
                 /*
                  * Section 3, lesson 24 -- event binding.
@@ -47,7 +48,7 @@ System.register(['@angular/core', './courses.component', './authors.component'],
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n<h1>My First Angular 2 App</h1>\n<courses></courses> <!-- added from lessons -->\n<authors></authors> <!-- added for exercise --> \n<!-- Section 3, lesson 23 -- class binding. (style.backgroundColor ...) below -->\n<button \n    class=\"btn btn-primary\"\n    [style.backgroundColor]=\"isBlue ? 'blue' : 'gray' \" \n    (click)=\"onClick($event)\">blue or gray</button>    \n<!-- <buttons-demo></buttons-demo> --> <!-- added for attempting to get bootstrap to work, not yet -->\n",
+                        template: "\n<h1>My First Angular 2 App</h1>\n<courses></courses> <!-- added from lessons -->\n<authors></authors> <!-- added for exercise --> \n<!-- Section 3, lesson 23 -- class binding. (style.backgroundColor ...) below -->\n<button \n    class=\"btn btn-primary\"\n    [style.backgroundColor]=\"isBlue ? 'blue' : 'gray' \" \n    (click)=\"onClick($event)\">blue or gray\n</button>\n<br>\n<br>\n    <input type=\"text\" [(ngModel)]=\"someValue\" /> <!-- two way binding example, when typing, the preview gets updated -->\n    <input type=\"button\" (click)=\"someValue = ''\" value=\"Clear\"/> <!-- two way binding example (clear the data, also form) -->\n    Preview {{ someValue }}\n<br>    \n<!-- <buttons-demo></buttons-demo> --> <!-- added for attempting to get bootstrap to work, not yet -->\n",
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent,]
                     }), 
                     __metadata('design:paramtypes', [])
