@@ -1,7 +1,12 @@
 import {Component} from '@angular/core';
 
-// we need to import our CoursesComponent, it exists in the same directory as app.component.ts
+/*
+ * TOP level used by main.ts
+ */
+
+// import components.
 import {CoursesComponent} from './courses.component'
+import {AuthorsComponent} from './authors.component'
 
 @Component({
     selector: 'my-app',
@@ -10,6 +15,6 @@ import {CoursesComponent} from './courses.component'
 <courses></courses> <!-- added from lessons -->
 <authors></authors> <!-- added for exercise --> 
 `,
-    directives: [CoursesComponent]
+    directives: [CoursesComponent, AuthorsComponent]
 })
 export class AppComponent { }
