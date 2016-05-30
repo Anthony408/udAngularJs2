@@ -1,31 +1,31 @@
 // https://github.com/angular/angular/blob/3229bf16656749427d1def38ced0e1d1d2ae1fa4/CHANGELOG.md angular2/core ==> @angular/core
 import {Component} from '@angular/core'
 import {CourseService} from './courses.service'
+import {AutoGrowDirective} from './auto-grow.directives'
 
 @Component({
     selector: 'courses',
     template: `
 <h2>Courses</h2>
+
 {{ title }}
+
+<input type="text" autoGrow /> <!-- add autoGrow directive -->
 <ul>
-<li *ngFor="#course of courses">
-    {{ course }}
-</li>                
+    <li *ngFor="let course of courses">
+        {{ course }}
+    </li>                
 </ul>
 `,
-    providers: [CourseService], // the services that we need, import it from CourseService.
+    providers: [CourseService], // the components / services we need
+    directives: [AutoGrowDirective, ] // the directives that we need.
+
 })
 export class CoursesComponent {
-
-    // SIMPLE example interpolation, this title will be injected into the template {{title}}
     title: string = "the title of the courses page goes here, blah blah blah"
-
-    // LIST example (courses) ... commented out to use a constructor / service
-    // courses: string[] = ['Course1', 'Course2', 'Course...', 'CourseN'];
-    courses; // uses constructor instead of being hard coded.
-
-    // use a NON COUPLED constructor (do NOT use the New() here, not good for unit testing, and refactoring)
+    courses;
     constructor(courseService: CourseService) {
-        this.courses = courseService.getSource(); // <== dependency injection handles instantiation here.
+        this.courses = courseService.getSource();
     }
+
 }
