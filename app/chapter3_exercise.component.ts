@@ -12,7 +12,7 @@ let template = `
       <div class="jumbotron">
         <h1>Heart Icon Voting!</h1>
         <p class="lead">Courage, passion, and yellow fever. Ho-ho-ho! pestilence of riddle. Wow, stormy fortune! Adventure is an evil codfish. Proud, salty scallywags greedily mark a rough, stormy moon.</p>
-        <i class="glyphicon {{state}}" (click)="onClick()" style="align-content: center;"> {{ count }} </i>
+        <i class="glyphicon {{state}}" (click)="onClick()" style="align-content: center; cursor: pointer"> {{ count }} </i>
       </div>
 
  
