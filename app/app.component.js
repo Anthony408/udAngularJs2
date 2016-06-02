@@ -30,7 +30,7 @@ System.register(['@angular/core', './chapter2.component', './chapter2_exercise.c
                 chapter3_exercise_component_1 = chapter3_exercise_component_1_1;
             }],
         execute: function() {
-            template = "\n<h1>Udacity Angular 2 App</h1>\n\n<!-- illustrates all of chapter2, how to use a component, service, template.-->\n<chapter2></chapter2> \n\n<!-- illustrates all of chapter2, how to use a component, service, template.-->\n<chapter2_exercise></chapter2_exercise> \n\n<!-- added for binding examples.  class, property, and data -->\n<chapter3></chapter3>     \n\n<!-- added for exercise -->\n<chapter3_exercise></chapter3_exercise> \n\n";
+            template = "\n<header>\n    <!-- hack, get ng2-bootstrap, its not working from npm?!? -->\n    <script src=\"node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js\"></script>\n    <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" rel=\"stylesheet\">\n</header>\n\n<body>\n    <!-- illustrates all of chapter2, how to use a component, service, template.-->\n    <chapter2></chapter2> \n    \n    <!-- illustrates all of chapter2, how to use a component, service, template.-->\n    <chapter2_exercise></chapter2_exercise> \n    \n    <!-- added for binding examples.  class, property, and data -->\n    <chapter3></chapter3>     \n    \n    <!-- added for exercise -->\n    <chapter3_exercise></chapter3_exercise> \n</body>\n";
             AppComponent = (function () {
                 function AppComponent() {
                 }
